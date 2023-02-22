@@ -1,0 +1,16 @@
+The program will be able to take input from a file and perform different operations based on 
+what the given instruction was. The program will take the hex number and perform the arithmetic 
+operations. The output should all be correct and it will also be displaying if there is an overflow.
+
+To run this program, you will have to type: 
+1. g++ -c driver.cpp
+2. g++ -o calc driver.o 
+3. ./calc 
+It will display all the information necessary
+
+The working process:
+First, the program will use the fstream library to read the file and store the values with the help of a for loop.
+Second, the values stored will be converted into uint32_t data type using sstream.
+Third, the arithmetic operation will be performed before figuring out if there is an overflow.
+    (the overflow is detected by seeing if operand one is greater than 0 and then subtracting the maximum unsigned 32 bits possible by the second operand, if the second operand is greater than zero, there will be an overflow)
+Fourth, the program uses printf to format and print out the necessary information. 
