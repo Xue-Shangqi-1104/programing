@@ -27,9 +27,21 @@ Para: string operation, uint32_t operand1, uint32_t operand2, uint32_t result, s
 Return: void
 */
 void displayResult(std::string, uint32_t, uint32_t, uint32_t, std::string);
+enum opcode {
+    ADD, ADDS,
+    SUB, SUBS,
+    AND, ANDS,
+    NOT, NOTS,
+    ORR, ORRS,
+    XOR, XORS,
+    LSR, LSRS,
+    ASR, ASRS
+};
+opcode interpretOpCode(std::string);
 
 int main(){
-    
+    int nFlag, zFlag;
+
     readFromFile("Programming-Project-1.txt");
     return 0;
 }
@@ -59,20 +71,73 @@ void performCalc(std::string oper, std::string oper1, std::string oper2){
     sh << std::hex << oper2;
     sh >> operand2;
 
-    if(operation == "ADD"){
-        result = operand1 + operand2;
+    switch(interpretOpCode(oper)){
+        case ADD:
+            result = operand1 + operand2;
+            break;
+        case ADDS:
+            result = operand1 + operand2;
+            
+            break;
+        case SUB:
+            break;
+        case SUBS:
+            break;
+        case AND:
+            break;
+        case ANDS:
+            break;
+        case NOT:
+            break;
+        case NOTS:
+            break;
+        case ORR:
+            break;
+        case ORRS:
+            break;
+        case XOR:
+            break;
+        case XORS:
+            break;
+        case LSR:
+            break;
+        case LSRS:
+            break;
+        case ASR:
+            break;
+        case ASRS:
+            break;
     }
 
-    if(operand1 > 0 && operand2 > UINT32_MAX - operand1){
-        overFlow = "yes";
-    }else{
-        overFlow = "no";
-    }
+    // if(operand1 > 0 && operand2 > UINT32_MAX - operand1){
+    //     overFlow = "yes";
+    // }else{
+    //     overFlow = "no";
+    // }
 
     displayResult(operation, operand1, operand2, result, overFlow);
 }
 
+opcode interpretOpCode(std::string op){
+    if(op == "ADD") return ADD;
+    if(op == "ADDS") return ADDS;
+    if(op == "SUB") return SUB;
+    if(op == "SUBS") return SUBS;
+    if(op == "AND") return AND;
+    if(op == "ANDS") return ANDS;
+    if(op == "NOT") return NOT;
+    if(op == "NOTS") return NOTS;
+    if(op == "ORR") return ORR;
+    if(op == "ORRS") return ORRS;
+    if(op == "XOR") return XOR;
+    if(op == "XORS") return XORS;
+    if(op == "LSR") return LSR;
+    if(op == "LSRS") return LSRS;
+    if(op == "ASR") return ASR;
+    if(op == "ASRS") return ASRS;
+}
+
 void displayResult(std::string oper, uint32_t oper1, uint32_t oper2, uint32_t rs, std::string check){
     printf("%-5s %#15X %#15X: %#15X \n", oper.c_str(), oper1, oper2, rs);
-    printf("%s: %11s \n\n", "Overflow", check.c_str());
+    //printf("%s: %11s \n\n", "Overflow", check.c_str());
 }
