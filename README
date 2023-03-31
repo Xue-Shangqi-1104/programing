@@ -23,4 +23,6 @@ The different operations are:
     LSL(S): Performs logical shift left on operand1 and the amount of shift is determined by operand2
     ASR(S): Performs arithmetic shift right on operand1 and the amount of shift is determined by operand2
         **NOTE** if there is an S at the end of the opcode, then the n and z flag will be set, otherwise it will not
+        The N flag is set if the result after the operation is negative
+        The Z flag is set if the result after the operation is zero
 Fourth, the program uses printf to format and print out the necessary information. 
