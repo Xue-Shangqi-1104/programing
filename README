@@ -3,7 +3,7 @@ what the given instruction was. The program will take the hex number and perform
 operations. The output should all be correct and it will also be displaying if there is an overflow.
 
 To run this program, you will have to type: 
-1. g++ -c driver.cpp
+1. g++ -c driver.cpp (Ignore the error it will give you)
 2. g++ -o calc driver.o 
 3. ./calc 
 It will display all the information necessary
