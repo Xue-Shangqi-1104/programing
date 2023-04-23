@@ -10,7 +10,9 @@ It will display all the information necessary
 
 The working process:
 First, the program will use the fstream library to read the file and store the values with the help of a for loop.
-Second, the values stored will be converted into uint32_t data type using sstream.
+    All the operations and registers are converted to uppercase for the sake of making the program easier.
+Second, determined by the register that is in the text file, the value is saved into the correct register.
+    The program takes advantage of a unordered map to set up the registers R0-R8. The unordered map data structure will be useful when performing the different operations.
 Third, the program reads the opcode and uses a switch statement to find the opcode that needs to be performed. 
 The different operations are:
     ADD(S): Adds operand1 and operand2 together and prints out the result
@@ -22,7 +24,9 @@ The different operations are:
     LSR(S): Performs logical shift right on operand1 and the amount of shift is determined by operand2
     LSL(S): Performs logical shift left on operand1 and the amount of shift is determined by operand2
     ASR(S): Performs arithmetic shift right on operand1 and the amount of shift is determined by operand2
-        **NOTE** if there is an S at the end of the opcode, then the n and z flag will be set, otherwise it will not
+        **NOTE** if there is an S at the end of the opcode, then the flags will be set, otherwise it will not
         The N flag is set if the result after the operation is negative
         The Z flag is set if the result after the operation is zero
+        The C flag is set if the result after the operation has a carry 
+        The V flag is set if the result after the operation is overflow
 Fourth, the program uses printf to format and print out the necessary information. 

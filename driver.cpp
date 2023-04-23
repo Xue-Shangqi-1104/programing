@@ -147,7 +147,7 @@ void performCalc(std::string oper, std::string save, std::string oper1, std::str
             registers[save] = registers[oper1] << immVal;
             break;
 
-        //not tested for this check point 
+        //not testing for this check point 
         // case ASR:
         //     operand1ASR = operand1;
         //     resultASR = operand1ASR >> operand2;
@@ -199,9 +199,6 @@ void performCalc(std::string oper, std::string save, std::string oper1, std::str
     if(op != ASR){
         displayResult(operation, save, oper1, oper2, flags, registers);
     }
-    // else{
-    //     displayResult(operation, operand1ASR, operand2, resultASR, overFlow, flags);
-    // }
 }
 
 opcode interpretOpCode(std::string op, bool &flag){
