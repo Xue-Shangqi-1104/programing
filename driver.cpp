@@ -8,7 +8,7 @@ Purpose: Reads information from a file and performs the operation stated
 #include <iostream>
 #include <string.h>
 #include <unordered_map>
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 
 /*
 This method uses fstream to take the information from a file and store them in the different variables
